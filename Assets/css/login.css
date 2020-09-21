@@ -1,0 +1,79 @@
+body{
+    background: url(../images/r25x6m.png) no-repeat;
+    background-size: cover;
+}
+header{
+    width: 1200px;
+    margin: 20px auto 0;
+}
+header .logo{
+    width: 80px;
+}
+
+.login {
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07),
+    0 2px 4px rgba(0,0,0,0.07),
+    0 4px 8px rgba(0,0,0,0.07),
+    0 8px 16px rgba(0,0,0,0.07),
+    0 16px 32px rgba(0,0,0,0.07),
+    0 32px 64px rgba(0,0,0,0.07);
+}
+.login h2{
+    font-family: FangSong;
+    font-size: 30px;
+    color: #232d37;
+    text-align: center;
+    padding: 15px 0;
+    text-indent: 1em;
+}
+.login .myForm {
+    padding: 0 20px;
+}
+.login .layui-btn{
+    width: 100%;
+}
+.login .SwitchL{
+    float: right;
+    font-weight: 100;
+    color: #cc6f38;
+}
+.login .layui-form-item input{
+    padding-left: 30px;
+    border-radius: 25px;
+    border: 1px solid #232d37;
+    color: #222222;
+    font-weight: 100;
+    font-size: 13px;
+}
+.login .layui-form-item{
+    position: relative;
+}
+.login .layui-form-item i{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.registered {
+    display: none;
+}
+.login .layui-btn{
+    background-color: #232d37;
+    border-radius: 5px;
+}
+.login .layui-icon-engine{
+    position: absolute;
+    top: 15px;
+    left: 76px;
+    font-size: 30px;
+    color: #4786b9;
+    font-weight: 600;
+}
