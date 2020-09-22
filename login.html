@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>大事件项目</title>
+    <title>后台登录</title>
     <link rel="icon" href="Assets/images/favicon.ico">
     <!-- 引入layui框架css样式 -->
     <link rel="stylesheet" href="layui-v2.5.6/layui/css/layui.css">
@@ -18,18 +18,18 @@
 </header>
 
 <!-- 登录框 -->
-<section class="login">
+<section class="login logIn">
     <i class="layui-icon layui-icon-engine"></i>
-    <h2>后台管理系统</h2>
+    <h2 class="title">后台管理系统</h2>
     <form class="layui-form myForm" action="">
         <div class="layui-form-item">
             <i class="layui-icon layui-icon-username"></i>
-            <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名" autocomplete="off"
+            <input type="text" name="username" required lay-verify="required|username" placeholder="请输入用户名" autocomplete="off"
                    class="layui-input">
         </div>
         <div class="layui-form-item">
             <i class="layui-icon layui-icon-password"></i>
-            <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+            <input type="password" name="password" required lay-verify="required|pass" placeholder="请输入密码" autocomplete="off"
                    class="layui-input">
         </div>
         <div class="layui-form-item">
@@ -44,11 +44,11 @@
 <!-- 注册框 -->
 <section class="login registered">
     <i class="layui-icon layui-icon-engine"></i>
-    <h2>后台管理系统</h2>
+    <h2 class="title">后台管理系统</h2>
     <form class="layui-form myForm" action="">
         <div class="layui-form-item">
             <i class="layui-icon layui-icon-username"></i>
-            <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名" autocomplete="off"
+            <input type="text" name="username" required lay-verify="required|username" placeholder="请输入用户名" autocomplete="off"
                    class="layui-input">
         </div>
         <div class="layui-form-item">
@@ -74,7 +74,9 @@
 <script src="Assets/js/jquery-1.12.4.min.js"></script>
 <!-- 引入layui框架js文件 -->
 <script src="layui-v2.5.6/layui/layui.all.js"></script>
+<!-- 引入utils.js文件 -->
+<script src="Assets/js/utils.js"></script>
 <!-- 引入login.js文件 -->
-<script src="Assets/js/login.js"></script>
+<script charset="UTF-8" src="Assets/js/login.js"></script>
 </body>
 </html>

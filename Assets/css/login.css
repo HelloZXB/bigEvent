@@ -1,6 +1,7 @@
 body{
-    background: url(../images/r25x6m.png) no-repeat;
+    background: url(../images/8xzl8y.jpg) no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 header{
     width: 1200px;
@@ -27,12 +28,13 @@ header .logo{
     0 32px 64px rgba(0,0,0,0.07);
 }
 .login h2{
-    font-family: FangSong;
+    font-family: KaiTi;
     font-size: 30px;
     color: #232d37;
     text-align: center;
     padding: 15px 0;
     text-indent: 1em;
+    cursor: move;
 }
 .login .myForm {
     padding: 0 20px;
@@ -76,4 +78,5 @@ header .logo{
     font-size: 30px;
     color: #4786b9;
     font-weight: 600;
+    z-index: -1;
 }

@@ -1,3 +1,26 @@
+(function () {
+    // 表单拖拽
+    let login = document.querySelector('.login');
+    let title = document.querySelector('.login .title');
+    title.addEventListener('mousedown', function (e) {
+        let x = e.pageX - login.offsetLeft;
+        let y = e.pageY - login.offsetTop;
+        document.addEventListener('mousemove', move);
+
+        function move(e) {
+            login.style.left = e.pageX - x + 'px';
+            login.style.top = e.pageY - y + 'px';
+        }
+
+        document.addEventListener('mouseup', function () {
+            document.removeEventListener('mousemove', move);
+        })
+    })
+    document.onselectstart = function () {
+        event.returnValue = false; // 禁止选中元素
+    }
+})();
+
 $(function () {
     // 1. 登录与注册结构的切换
     $('.login .myForm a').on('click', function () {
@@ -32,13 +55,14 @@ $(function () {
     });
 
     // 3. 注册功能
-    $('.register .myForm').on('submit', function (e) {
+    $('.registered .myForm').on('submit', function (e) {
         e.preventDefault(); // 阻止表单的默认提交行为
         $.ajax({
             type: 'post',
-            url: 'http://ajax.frontend.itheima.net/api/reguser',
-            data: $(this).serialize(),
+            url: 'api/reguser',
+            data: $(this).serialize(), // 数据序列化
             success: function (res) {
+                console.log(res);
                 if (res.status === 0) {
                     $('.login').show().next().hide();
                 } else {
@@ -50,5 +74,27 @@ $(function () {
                 }
             }
         })
+    });
+
+    // 4. 登录功能
+    $('.logIn .myForm').on('submit', function (e) {
+        e.preventDefault(); // 阻止默认提交行为
+        $.ajax({ // 发送Ajax请求
+            type: 'post',
+            url: '/api/login',
+            data: $(this).serialize(), // 数据序列化
+            success: function (res) {
+                if (res.status === 0) {
+                    window.localStorage.setItem('token', res.token);
+                    location.href = 'index.html';
+                } else {
+                    layer.open({
+                        title: '温馨提示',
+                        content: res.message,
+                        time: 2000
+                    });
+                }
+            }
+        })
     })
-})
+});
