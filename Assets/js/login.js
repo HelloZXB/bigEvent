@@ -30,4 +30,25 @@ $(function () {
             '密码必须6到12位，且不能出现空格'
         ]
     });
+
+    // 3. 注册功能
+    $('.register .myForm').on('submit', function (e) {
+        e.preventDefault(); // 阻止表单的默认提交行为
+        $.ajax({
+            type: 'post',
+            url: 'http://ajax.frontend.itheima.net/api/reguser',
+            data: $(this).serialize(),
+            success: function (res) {
+                if (res.status === 0) {
+                    $('.login').show().next().hide();
+                } else {
+                    layer.open({
+                        title: '温馨提示',
+                        content: res.message,
+                        time: 2000
+                    });
+                }
+            }
+        })
+    })
 })
