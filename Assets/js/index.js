@@ -1,0 +1,22 @@
+$(function () {
+    $.ajax({
+        type: 'get',
+        url: '/my/userinfo',
+        headers: {
+            Authorization:window.localStorage.getItem('token') // 生成token
+        },
+        success: function (res){
+            if (res.status === 0){
+                $('.userInfo .welcome').html(`欢迎&nbsp;&nbsp;${res.data.username}`); // 替换欢迎语
+                if(res.data.user_pic) {
+                    $('.userInfo .layui-nav-img').show().attr('src', res.data.user_pic); // 显示头像
+                    $('.layui-header .layui-nav-img').show().attr('src', res.data.user_pic); // 显示顶部头像
+                    $('.userInfo .text-avatar,.layui-header .text-avatar').hide(); // 头像字母隐藏
+                } else {
+                    $('.userInfo .text-avatar').text(res.data.username.slice(0, 1).toUpperCase()); // 第一次登录user_pic是null
+                    $('.layui-header .text-avatar').text(res.data.username.slice(0, 1).toUpperCase()); // 顶部右侧字母头像显示
+                }
+            }
+        }
+    })
+})
