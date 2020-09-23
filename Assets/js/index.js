@@ -3,12 +3,12 @@ $(function () {
         type: 'get',
         url: '/my/userinfo',
         headers: {
-            Authorization:window.localStorage.getItem('token') // 生成token
+            Authorization: window.localStorage.getItem('token') // 生成token
         },
-        success: function (res){
-            if (res.status === 0){
+        success: function (res) {
+            if (res.status === 0) {
                 $('.userInfo .welcome').html(`欢迎&nbsp;&nbsp;${res.data.username}`); // 替换欢迎语
-                if(res.data.user_pic) {
+                if (res.data.user_pic) {
                     $('.userInfo .layui-nav-img').show().attr('src', res.data.user_pic); // 显示头像
                     $('.layui-header .layui-nav-img').show().attr('src', res.data.user_pic); // 显示顶部头像
                     $('.userInfo .text-avatar,.layui-header .text-avatar').hide(); // 头像字母隐藏
@@ -18,5 +18,13 @@ $(function () {
                 }
             }
         }
+    })
+
+    $('.layui-header .logout').on('click', function () {
+        layer.confirm('温馨提示', {icon: 3, title: '提示'}, function (index) {
+            window.localStorage.removeItem('token'); // 删除本地存储中的token
+            layer.close(index); // 关闭弹出层
+            location.href = 'login.html';
+        })
     })
 })
