@@ -27,12 +27,13 @@
                         个人中心
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">基本资料</a></dd>
-                        <dd><a href="">更换头像</a></dd>
-                        <dd><a href="">重置密码</a></dd>
+                        <dd><a target="mainIframe" href="user/userInfo.html">基本资料</a></dd>
+                        <dd><a target="mainIframe" href="user/userAvatar.html">更换头像</a></dd>
+                        <dd><a target="mainIframe" href="user/userReset.html">重置密码</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="javascript:;" class="logout"><i class="layui-icon layui-icon-logout"></i>退出</a></li>
+                <li class="layui-nav-item"><a href="javascript:;" class="logout"><i
+                        class="layui-icon layui-icon-logout"></i>退出</a></li>
             </ul>
         </div>
 
@@ -46,22 +47,23 @@
                         <span class="welcome">欢迎&nbsp;&nbsp;AAA</span>
                     </a>
                 </div>
-                <ul class="layui-nav layui-nav-tree"  lay-filter="test" lay-shrink="all">
-                    <li class="layui-nav-item layui-this"><a href="javascript:;"><i class="layui-icon layui-icon-home"></i>首页</a></li>
+                <ul class="layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
+                    <li class="layui-nav-item layui-this"><a href="javascript:;"><i
+                            class="layui-icon layui-icon-home"></i>首页</a></li>
                     <li class="layui-nav-item layui-nav-itemed">
                         <a class="" href="javascript:;"><i class="iconfont icon-16"></i>文章管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章类别</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章列表</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>发表文章</a></dd>
+                            <dd><a target="mainIframe" href="article/articleCategory.html"><i class="layui-icon layui-icon-app"></i>文章类别</a></dd>
+                            <dd><a target="mainIframe" href="article/articleList.html"><i class="layui-icon layui-icon-app"></i>文章列表</a></dd>
+                            <dd><a target="mainIframe" href="article/articleRelease.html"><i class="layui-icon layui-icon-app"></i>发表文章</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;"><i class="layui-icon layui-icon-username"></i>个人中心</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>基础资料</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>更换头像</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
+                            <dd><a target="mainIframe" href="user/userInfo.html"><i class="layui-icon layui-icon-app"></i>基础资料</a></dd>
+                            <dd><a target="mainIframe" href="user/userAvatar.html"><i class="layui-icon layui-icon-app"></i>更换头像</a></dd>
+                            <dd><a target="mainIframe" href="user/userReset.html"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
                         </dl>
                     </li>
                 </ul>
@@ -70,7 +72,7 @@
 
         <div class="layui-body">
             <!-- 内容主体区域 -->
-            <div style="padding: 15px;">内容主体区域</div>
+            <iframe name="mainIframe" src="home/dashboard.html" width="100%" height="100%" frameborder="0"></iframe>
         </div>
 
         <div class="layui-footer">

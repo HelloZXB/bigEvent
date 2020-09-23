@@ -24,7 +24,7 @@ $(function () {
         layer.confirm('温馨提示', {icon: 3, title: '提示'}, function (index) {
             window.localStorage.removeItem('token'); // 删除本地存储中的token
             layer.close(index); // 关闭弹出层
-            location.href = 'login.html';
+            location.href = './login.html';
         })
     })
 })
