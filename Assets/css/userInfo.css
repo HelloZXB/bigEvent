@@ -9,8 +9,11 @@ form {
     float: left;
     display: block;
     padding: 9px 15px;
-    width: 100px;
+    width: 150px;
     font-weight: 100;
     line-height: 20px;
     text-align: right;
+}
+.layui-input-block{
+    margin-left: 150px;
 }
