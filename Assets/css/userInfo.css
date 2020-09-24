@@ -1,0 +1,16 @@
+.layui-card {
+    margin: 16px;
+}
+
+form {
+    width: 500px;
+}
+.layui-form-label{
+    float: left;
+    display: block;
+    padding: 9px 15px;
+    width: 100px;
+    font-weight: 100;
+    line-height: 20px;
+    text-align: right;
+}

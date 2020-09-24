@@ -4,6 +4,9 @@
  * @Last Modified by:   ZhuXiaobing 
  * @Last Modified time: 2020-07-20 16:40:36 
  */
+i,span,div,a,li,label,button{
+    font-weight: 100;
+}
 /* 清除浮动 */
 .clearfix:after {visibility: hidden;clear: both;display: block;content: ".";height: 0}
 .clearfix {*zoom: 1}

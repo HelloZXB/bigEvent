@@ -12,7 +12,7 @@ $.ajaxPrefilter(function (options) {
 
     // 统一开启权限验证
     options.complete = function (res) {
-        if (res.responseJSON.status === 1 && res.responseJSON.message === '身份验证失败!') {
+        if (res.responseJSON.status === 1 && res.responseJSON.message === '身份验证失败！') {
             localStorage.removeItem('token'); // 删除本地中无效的token
             location.href = 'login.html';
         }

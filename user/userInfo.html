@@ -12,7 +12,38 @@
     <link rel="stylesheet" href="../Assets/css/userInfo.css">
 </head>
 <body>
-修改信息
+<div class="layui-card">
+    <div class="layui-card-header">修改用户信息</div>
+    <div class="layui-card-body">
+        <form class="layui-form myForm" lay-filter="myForm" action="">
+            <input type="hidden" name="id">
+            <div class="layui-form-item">
+                <label class="layui-form-label">登陆名称</label>
+                <div class="layui-input-block">
+                    <input type="text" disabled name="username" required  lay-verify="required" placeholder="请输入登陆名称" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户昵称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="nickname" required  lay-verify="required" placeholder="请输入用户昵称" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户邮箱</label>
+                <div class="layui-input-block">
+                    <input type="text" name="email" required  lay-verify="required|email" placeholder="请输入用户邮箱" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">提交修改</button>
+                    <button type="reset" class="layui-btn layui-btn-primary reset">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 <!-- 引入jQuery.js文件 -->
 <script src="../Assets/js/jquery-1.12.4.min.js"></script>
