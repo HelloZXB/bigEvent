@@ -3,8 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="icon" href="../Assets/images/favicon.ico">
+    <!-- 引入iconfont图标 -->
+    <link rel="stylesheet" href="../Assets/fonts/iconfont.css">
+    <!-- 引入layui框架css样式 -->
+    <link rel="stylesheet" href="../layui-v2.5.6/layui/css/layui.css">
+    <!-- 引入base文件 -->
+    <link rel="stylesheet" href="../Assets/css/base.css">
+    <!-- 引入articleCategory.css样式 -->
+    <link rel="stylesheet" href="../Assets/css/articleCategory.css">
 </head>
 <body>
-文章分类页面
+<div class="layui-card">
+    <div class="layui-card-header">
+        <span>文章类别管理</span>
+        <button type="button" class="layui-btn layui-btn-normal layui-btn-sm">增加分类</button>
+    </div>
+    <div class="layui-card-body">
+        <table class="layui-table">
+            <colgroup>
+                <col width="0">
+                <col width="0">
+                <col width="200">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>分类名称</th>
+                <th>分类别名</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>贤心</td>
+                <td>2016-11-29</td>
+                <td>
+                    <button type="button" class="layui-btn  layui-btn-xs">编辑</button>
+                    <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">删除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>许闲心</td>
+                <td>2016-11-28</td>
+                <td>
+                    <button type="button" class="layui-btn  layui-btn-xs">编辑</button>
+                    <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">删除</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- 引入jQuery.js文件 -->
+<script src="../Assets/js/jquery-1.12.4.min.js"></script>
+<!-- 引入layui框架js文件 -->
+<script src="../layui-v2.5.6/layui/layui.all.js"></script>
+<!-- 引入template模板文件 -->
+<script src="../Assets/lib/template-web.js"></script>
+<!-- 引入utils.js文件 -->
+<script src="../Assets/js/utils.js"></script>
+<!-- 引入articleCategory.js文件 -->
+<script charset="UTF-8" src="../Assets/js/articleCategory.js"></script>
 </body>
 </html>
