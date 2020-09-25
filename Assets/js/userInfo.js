@@ -20,7 +20,7 @@ $(function () {
         e.preventDefault(); // 阻止默认行为
         $.ajax({
             type: 'post',
-            url: 'my/userinfo',
+            url: '/my/userinfo',
             data: $(this).serialize(), // 表单序列化
             success: function (res) {
                 layer.msg(res.message);
