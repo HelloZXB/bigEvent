@@ -3,8 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="icon" href="../Assets/images/favicon.ico">
+    <!-- 引入layui框架css样式 -->
+    <link rel="stylesheet" href="../layui-v2.5.6/layui/css/layui.css">
+    <!-- 引入cropper.css文件 -->
+    <link rel="stylesheet" href="../Assets/lib/cropper/cropper.css">
+    <!-- 引入base文件 -->
+    <link rel="stylesheet" href="../Assets/css/base.css">
+    <!-- 引入userAvatar.css样式 -->
+    <link rel="stylesheet" href="../Assets/css/userAvatar.css">
 </head>
 <body>
-用户头像
+<div class="layui-card">
+    <div class="layui-card-header">裁切头像图片</div>
+    <div class="layui-card-body">
+        <div class="layui-card">
+            <div class="layui-card-header">裁切头像图片</div>
+            <div class="layui-card-body">
+                <div class="row1">
+                    <div class="cropper-box">
+                        <img id="image" src="../Assets/images/sample.JPG"/>
+                    </div>
+                    <div class="preview-box">
+                        <div>
+                            <div class="img-preview w100"></div>
+                            <p class="size">100 x 100</p>
+                        </div>
+                        <div>
+                            <div class="img-preview w50"></div>
+                            <p class="size">50 x 50</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row2">
+                    <input type="file" id="avatar" style="display: none;">
+                    <button type="button" class="layui-btn btn-upload">上传</button>
+                    <button type="button" class="layui-btn layui-btn-danger btn-sure">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 引入jQuery.js文件 -->
+<script src="../Assets/js/jquery-1.12.4.min.js"></script>
+<!-- 引入layui框架js文件 -->
+<script src="../layui-v2.5.6/layui/layui.all.js"></script>
+<!-- 引入裁剪图面文件 -->
+<script src="../Assets/lib/cropper/Cropper.js"></script>
+<!-- 引入裁剪图面文件 -->
+<script src="../Assets/lib/cropper/jquery-cropper.js"></script>
+<!-- 引入utils.js文件 -->
+<script src="../Assets/js/utils.js"></script>
+<!-- 引入login.js文件 -->
+<script src="../Assets/js/userAvatar.js"></script>
 </body>
 </html>
