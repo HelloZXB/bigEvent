@@ -6,3 +6,12 @@
     justify-content: space-between;
     align-items: center;
 }
+.addForm{
+    padding: 20px;
+}
+.layui-form-label{
+    width: 103px;
+    padding-top: 9px;
+    font-weight: 100;
+    text-align: center;
+}

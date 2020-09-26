@@ -1,6 +1,7 @@
 $(function () {
     renderTable();
-    function renderTable(){
+
+    function renderTable() {
         $.ajax({
             type: 'get',
             url: '/my/article/cates',
@@ -45,10 +46,30 @@ $(function () {
         $.ajax({
             type: 'post',
             url: '/my/article/addcates',
+            data: $(this).serialize(), // 表单序列化
             success: function (res) {
-                layer.close(window.addIndex); // 关闭弹出层
-                renderTable();
+                if (res.status === 0){
+                    layer.close(window.addIndex); // 关闭弹出层
+                    renderTable();
+                }
             }
+        })
+    })
+
+    // 删除文章分类
+    $('tbody').on('click', '.btn-del', function () {
+        let id = $(this).data('id'); // data()方法获取标签中的自定义属性存储的数据
+        layer.confirm('温馨提示', {icon: 3, title: '提示'}, function (index) {
+            $.ajax({
+                type: 'get',
+                url: '/my/article/deletecate/' + id,
+                success: function (res) {
+                    if (res.status === 0) {
+                        layer.close(index);
+                        renderTable(); // 删除成功之后重新渲染页面
+                    }
+                }
+            })
         })
     })
 })
