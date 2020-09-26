@@ -59,7 +59,7 @@ $(function () {
         e.preventDefault(); // 阻止表单的默认提交行为
         $.ajax({
             type: 'post',
-            url: 'api/reguser',
+            url: '/api/reguser',
             data: $(this).serialize(), // 数据序列化
             success: function (res) {
                 console.log(res);

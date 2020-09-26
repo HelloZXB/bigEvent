@@ -59,7 +59,7 @@ $(function () {
     // 删除文章分类
     $('tbody').on('click', '.btn-del', function () {
         let id = $(this).data('id'); // data()方法获取标签中的自定义属性存储的数据
-        layer.confirm('温馨提示', {icon: 3, title: '提示'}, function (index) {
+        layer.confirm('确定删除此分类?', {icon: 3, title: '提示'}, function (index) {
             $.ajax({
                 type: 'get',
                 url: '/my/article/deletecate/' + id,

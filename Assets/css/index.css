@@ -47,3 +47,6 @@ i,span,div,a,li{
 .home .layui-footer{
     text-align: center;
 }
+.layui-nav-child dd{
+    padding-left: 20px;
+}
