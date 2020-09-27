@@ -94,6 +94,35 @@
         </div>
     </form>
 </script>
+<!-- 更新文章分类的模板 -->
+<script type="text/html" id="editCteTmp">
+    <form class="layui-form myForm editForm" lay-filter="myForm">
+        <input type="hidden" name="Id">
+        <!-- 第一行：分类名称 -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">分类名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" required lay-verify="required|username" placeholder="请输入分类名称"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <!-- 第二行：分类别名 -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">分类别名</label>
+            <div class="layui-input-block">
+                <input type="text" name="alias" required lay-verify="required|username" placeholder="请输入分类别名"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <!-- 第三行：确认添加 重置 -->
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn btn-add" lay-submit lay-filter="formDemo">更 新</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</script>
 <!-- 引入jQuery.js文件 -->
 <script src="../Assets/js/jquery-1.12.4.min.js"></script>
 <!-- 引入layui框架js文件 -->

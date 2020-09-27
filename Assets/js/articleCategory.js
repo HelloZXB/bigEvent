@@ -48,7 +48,7 @@ $(function () {
             url: '/my/article/addcates',
             data: $(this).serialize(), // 表单序列化
             success: function (res) {
-                if (res.status === 0){
+                if (res.status === 0) {
                     layer.close(window.addIndex); // 关闭弹出层
                     renderTable();
                 }
@@ -70,6 +70,43 @@ $(function () {
                     }
                 }
             })
+        })
+    })
+
+    // 编辑文章分类数据回显
+    $('tbody').on('click', '.btn-edit', function () {
+        var categoryId = $(this).data('id')
+        $.ajax({
+            type: 'get',
+            url: '/my/article/cates/' + categoryId,
+            success: function (res) {
+                console.log(res)
+                if (res.status === 0) {
+                    window.editIndex = layer.open({ // 弹出模态框
+                        type: 1,
+                        title: '更新文章分类',
+                        content: $('#editCteTmp').html(),
+                        area: '520px'
+                    })
+                    layui.form.val("myForm", res.data); // 将数据渲染到页面
+                }
+            }
+        })
+    })
+
+    // 更新文章分类数据
+    $('body').on('submit', '.editForm', function (e) {
+        e.preventDefault(); // 阻止默认行为
+        $.ajax({
+            type: 'post',
+            url: '/my/article/updatecate',
+            data: $(this).serialize(), // 表单序列化
+            success: function (res) {
+                if (res.status === 0) {
+                    layer.close(window.editIndex);
+                    renderTable();
+                }
+            }
         })
     })
 })
