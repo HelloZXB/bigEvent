@@ -72,6 +72,7 @@
             </tr>
             </tbody>
         </table>
+        <div id="test1"></div>
     </div>
 </div>
 
@@ -82,8 +83,7 @@
     <option value="{{value.Id}}">{{value.name}}</option>
     {{/each}}
 </script>
-
-<!-- 文章列表页中文章模板 -->
+<!-- 文章列表页中所有文章模板 -->
 <script type="text/template" id="articleList">
     {{each data value index}}
     <tr>
@@ -93,14 +93,13 @@
         <td>{{value.pub_date}}</td>
         <td>{{value.state}}</td>
         <td>
-            <button type="button" data-id="{{value.Id}}" class="layui-btn layui-btn-xs btn-edit">编辑</button>
+            <a href="./article_edit.html?id={{value.Id}}" type="button" class="layui-btn layui-btn-xs btn-edit">编辑</a>
             <button type="button" data-id="{{value.Id}}" class="layui-btn layui-btn-danger layui-btn-xs btn-del">删除
             </button>
         </td>
     </tr>
     {{/each}}
 </script>
-
 <!-- 引入jQuery.js文件 -->
 <script src="../Assets/js/jquery-1.12.4.min.js"></script>
 <!-- 引入layui框架js文件 -->
