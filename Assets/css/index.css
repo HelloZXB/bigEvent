@@ -1,20 +1,28 @@
-i,span,div,a,li{
+i,
+span,
+div,
+a,
+li {
     font-weight: 100;
 }
-.home .layui-logo img{
+
+.home .layui-logo img {
     width: 55px;
 }
+
 .home .userInfo {
     height: 60px;
     border-bottom: 1px solid #222;
     line-height: 60px;
     text-align: center;
 }
-.home .userInfo a{
+
+.home .userInfo a {
     color: #fff;
     display: block;
 }
-.home  .text-avatar{
+
+.home .text-avatar {
     width: 30px;
     height: 30px;
     display: inline-block;
@@ -24,29 +32,37 @@ i,span,div,a,li{
     line-height: 30px;
     vertical-align: middle;
 }
-.home .userInfo a:hover{
+
+.home .userInfo a:hover {
     color: #fff;
 }
-.home .layui-nav-img{
+
+.home .layui-nav-img {
     vertical-align: middle;
 }
-.home  .layui-nav-img{
+
+.home .layui-nav-img {
     display: none;
 }
-.home .layui-side-scroll{
+
+.home .layui-side-scroll {
     width: 200px;
 }
-.home .layui-nav i{
+
+.home .layui-nav i {
     margin-right: 5px;
     font-size: 16px;
     vertical-align: middle;
 }
-.home .layui-nav .layui-nav-item>.layui-nav-child{
+
+.home .layui-nav .layui-nav-item>.layui-nav-child {
     padding-left: 20px;
 }
-.home .layui-footer{
+
+.home .layui-footer {
     text-align: center;
 }
-.layui-nav-child dd{
+
+.layui-nav-child dd {
     padding-left: 20px;
 }

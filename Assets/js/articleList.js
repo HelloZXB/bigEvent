@@ -1,10 +1,10 @@
 $(function () {
     $.ajax({
-        type: 'post',
+        type: 'get',
         url: '/my/article/cates',
         success: function (res) {
             console.log(res);
-            if (res.status === 0) { // 使用末班渲染到页面
+            if (res.status === 0) { // 使用模板渲染到页面
                 let htmlStr = template('.categoryList', res);
                 $('#category').html(htmlStr);
                 layui.form.render(); // layui下拉菜单
@@ -12,10 +12,11 @@ $(function () {
         }
     })
 
-    let payams = {
+    let params = {
         pagenum: 1,
         pagesize: 2,
         cate_id: $('#category').val(),
+        state: $('#state').val()
     }
 
     renderList();
@@ -36,7 +37,6 @@ $(function () {
 
     // 实现筛选案例
     $('.myForm').on('submit', function (e) {
-        console.log(111);
         e.preventDefault(); // 阻止默认行为
         params.cate_id = $('#category').val();
         params.state = $('#state').val();
