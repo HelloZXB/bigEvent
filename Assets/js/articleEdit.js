@@ -1,7 +1,7 @@
 $(function () {
     initEditor(); // 启用富文本编辑器
     let options = { // 裁切功能
-        aspectRatio: 400 / 200, // 裁剪比例
+        aspectRatio: 400 / 280, // 裁剪比例
         preview: '.img-preview' // 预览位置
     }
     $('#image').cropper(options);
@@ -12,7 +12,7 @@ $(function () {
         url: '/my/article/cates',
         success: function (res) {
             if (res.status === 0) {
-                let htmlStr = template('.categoryList', res);
+                let htmlStr = template('categoryList', res);
                 $('#category').html(htmlStr);
                 layui.form.render(); // 重新调用方法进行渲染
                 getArticleDataById(); // 调用函数进行数据回显
@@ -55,12 +55,12 @@ $(function () {
         // 获取裁切图片的二进制形式
         $('#image').cropper('getCroppedCanvas', {
             width: 400, height: 280
-        }).toBlob(function (blob) {
-            data.append('cover_img', blob);
+        }).toBlob(function (blod) {
+            data.append('cover_img', blod);
             data.append('content', tinyMCE.activeEditor.getContent());
             $.ajax({
                 type: 'post',
-                url: '/my/article.edit',
+                url: '/my/article/edit',
                 data: data,
                 contentType: false, // 不需要设置请求头
                 processData: false, // 内部不再需要转换成字符串
