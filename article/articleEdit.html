@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" href="../Assets/images/favicon.ico">
+    <!-- 引入iconfont图标 -->
+    <link rel="stylesheet" href="../Assets/fonts/iconfont.css">
+    <!-- 引入layui框架css样式 -->
+    <link rel="stylesheet" href="../layui-v2.5.6/layui/css/layui.css">
+    <!-- 引入base文件 -->
+    <link rel="stylesheet" href="../Assets/css/base.css">
+    <!-- 引入articleEdit.css样式 -->
+    <link rel="stylesheet" href="../Assets/css/articleEdit.css">
+</head>
+<body>
+<div class="layui-card">
+    <div class="layui-card-header">更新文章</div>
+    <div class="layui-card-body">
+        <form class="layui-form myForm" lay-filter="myForm" action="">
+            <input type="hidden" name="Id">
+            <div class="layui-form-item">
+                <label class="layui-form-label">文章标题</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入文章标题"
+                           autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">文章分类</label>
+                <div class="layui-input-block">
+                    <select name="cate_id" id="category" lay-verify="required">
+                        <option value=""></option>
+                        <option value="0">北京</option>
+                        <option value="1">上海</option>
+                        <option value="2">广州</option>
+                        <option value="3">深圳</option>
+                        <option value="4">杭州</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">文章内容</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容文章内容" id="mytextarea" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">裁切图片</label>
+                <div class="layui-input-block">
+                    <div class="box">
+                        <!-- 左侧裁切区域 -->
+                        <div class="cropper-box">
+                            <img id="image" src="../Assets/images/sample2.JPG"/>
+                        </div>
+                        <!-- 右侧预览区域 -->
+                        <div class="preview-box">
+                            <!-- 右侧上方的图片预览区域 -->
+                            <div class="img-preview"></div>
+                            <div>
+                                <!-- 按钮区域 -->
+                                <input type="file" id="avatar" style="display: none;">
+                                <button type="button" class="layui-btn layui-btn-danger btn-upload">选择封面</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn btn btn-release" lay-submit lay-filter="formDemo">发布</button>
+                    <button class="layui-btn btn layui-btn-primary">存为草稿</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 文章列表页中文章分类模板 -->
+<script type="text/html" id="categoryList">
+    {{each data value}}
+    <option value="{{value.Id}}">{{value.name}}</option>
+    {{/each}}
+</script>
+<!-- 引入jQuery.js文件 -->
+<script src="../Assets/js/jquery-1.12.4.min.js"></script>
+<!-- 引入layui框架js文件 -->
+<script src="../layui-v2.5.6/layui/layui.all.js"></script>
+<!-- 引入template模板文件 -->
+<script src="../Assets/lib/template-web.js"></script>
+<!-- 引入TinyMCE富文本编辑器插件 -->
+<script src="../Assets/lib/tinymce/tinymce.min.js"></script>
+<script src="../Assets/lib/tinymce/tinymce_setup.js"></script>
+<!-- 引入cropper插件文件 -->
+<script src="../Assets/lib/cropper/Cropper.js"></script>
+<script src="../Assets/lib/cropper/jquery-cropper.js"></script>
+<!-- 引入utils.js文件 -->
+<script src="../Assets/js/utils.js"></script>
+<!-- 引入articleEdit.js文件 -->
+<script src="../Assets/js/articleEdit.js"></script>
+</body>
+</html>
