@@ -41,4 +41,35 @@ $(function () {
             }
         })
     }
+
+    // 文章更新
+    $('.myForm').on('click', '.btn', function (e) {
+        e.preventDefault(); // 阻止默认行为
+        let data = new FormData($('.myForm')[0]); // 准备数据
+        if ($(e.target).hasClass('btn-release')) { // 确定当前文章是发布 ? 存为草稿
+            data.append('state', '已发布'); // 已发布
+        } else {
+            data.append('state', '草稿'); // 草稿
+        }
+
+        // 获取裁切图片的二进制形式
+        $('#image').cropper('getCroppedCanvas', {
+            width: 400, height: 280
+        }).toBlob(function (blob) {
+            data.append('cover_img', blob);
+            data.append('content', tinyMCE.activeEditor.getContent());
+            $.ajax({
+                type: 'post',
+                url: '/my/article.edit',
+                data: data,
+                contentType: false, // 不需要设置请求头
+                processData: false, // 内部不再需要转换成字符串
+                success: function (res) {
+                    if (res.status === 0) {
+                        location.href = 'articleList.html';
+                    }
+                }
+            })
+        })
+    })
 })

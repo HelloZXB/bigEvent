@@ -5,7 +5,7 @@ $(function () {
         success: function (res) {
             console.log(res);
             if (res.status === 0) { // 使用模板渲染到页面
-                let htmlStr = template('.categoryList', res);
+                let htmlStr = template('categoryList', res);
                 $('#category').html(htmlStr);
                 layui.form.render(); // layui下拉菜单
             }
@@ -28,7 +28,7 @@ $(function () {
             data: params,
             success: function (res) {
                 if (res.status === 0) {
-                    let htmlStr = template('.articleList', res);
+                    let htmlStr = template('articleList', res);
                     $('tbody').html(htmlStr);
                     renderPage(res);
                 }
